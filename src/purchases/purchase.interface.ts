@@ -1,6 +1,7 @@
 export interface PurchaseItem{
     producId: number,
-    purchaseDate: string
+    quantity: number,
+    price: number
 }
 export interface Purchase{
     id: number,

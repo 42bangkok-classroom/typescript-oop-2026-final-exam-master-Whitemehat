@@ -16,9 +16,11 @@ export class PurchaseController {
   @Get(':id')
   findOne(@Param('id') id: number) {
     return {
-        success: false,
-        data: this.PurchaseService.findOne(+id) || null,
-        message: this.PurchaseService.findOne(+id) ? 'Filtered purchases successfully': `Purchase with id ${id} not found`
-      };
+      success: false,
+      data: this.PurchaseService.findOne(+id) || null,
+      message: this.PurchaseService.findOne(+id)
+        ? 'Filtered purchases successfully'
+        : `Purchase with id ${id} not found`,
+    };
   }
 }

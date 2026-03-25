@@ -14,8 +14,8 @@ export class PurchaseService {
     const data = JSON.parse(rawData) as Purchase[];
     const customer = data.find((d) => d.id === id);
     if (!customer) {
-      return null
+      return null;
     }
-    return customer
+    return customer;
   }
 }

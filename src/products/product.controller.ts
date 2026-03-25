@@ -1,4 +1,4 @@
-import { Controller, Get, UseFilters, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, UseInterceptors } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { ResponseInterceptor } from 'src/common/api-interceptor';
 

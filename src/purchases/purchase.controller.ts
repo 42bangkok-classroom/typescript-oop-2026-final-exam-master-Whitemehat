@@ -19,7 +19,7 @@ export class PurchaseController {
       success: this.PurchaseService.findOne(+id) ? true : false,
       data: this.PurchaseService.findOne(+id) || null,
       message: this.PurchaseService.findOne(+id)
-        ? 'Filtered purchases successfully'
+        ? 'Fetched purchases successfully'
         : `Purchase with id ${id} not found`,
     };
   }

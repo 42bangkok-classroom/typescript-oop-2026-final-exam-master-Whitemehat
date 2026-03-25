@@ -1,14 +1,14 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { PurchaseService } from './purchase.service';
 
 @Controller('purchases')
 export class PurchaseController {
   constructor(private readonly PurchaseService: PurchaseService) {}
   @Get()
-  findAll() {
+  findAll(@Query('customerName') customerName: string) {
     return {
       success: true,
-      data: this.PurchaseService.findAll(),
+      data: this.PurchaseService.findAll(customerName),
       message: 'Fetched purchases successfully',
     };
   }
@@ -16,7 +16,7 @@ export class PurchaseController {
   @Get(':id')
   findOne(@Param('id') id: number) {
     return {
-      success: false,
+      success: this.PurchaseService.findOne(+id) ? true : false,
       data: this.PurchaseService.findOne(+id) || null,
       message: this.PurchaseService.findOne(+id)
         ? 'Filtered purchases successfully'

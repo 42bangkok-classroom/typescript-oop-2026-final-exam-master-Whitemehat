@@ -23,7 +23,7 @@ export class PurchaseService {
     return {
       success: true,
       data: customer,
-      message: 'Fetched purchases successfully',
+      message: 'Filtered purchases successfully',
     };
   }
 }

@@ -14,16 +14,8 @@ export class PurchaseService {
     const data = JSON.parse(rawData) as Purchase[];
     const customer = data.find((d) => d.id === id);
     if (!customer) {
-      return {
-        success: false,
-        data: null,
-        message: `Purchase with id ${id} not found`,
-      };
+      return null
     }
-    return {
-      success: true,
-      data: customer,
-      message: 'Filtered purchases successfully',
-    };
+    return customer
   }
 }

@@ -10,13 +10,13 @@ export class PurchaseService {
     return data;
   }
 
-  findOne(customerName: string): Purchase{
-    const rawData = fs.readFileSync(filepath , 'utf-8');
+  findOne(customerName: string): Purchase {
+    const rawData = fs.readFileSync(filepath, 'utf-8');
     const data = JSON.parse(rawData) as Purchase[];
-    const customer = data.find(d => d.customerName === customerName);
-    if(!customer){
-        throw new NotFoundException()
+    const customer = data.find((d) => d.customerName === customerName);
+    if (!customer) {
+      throw new NotFoundException();
     }
-    return customer
+    return customer;
   }
 }

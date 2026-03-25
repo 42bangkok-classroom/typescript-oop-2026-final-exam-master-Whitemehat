@@ -14,13 +14,11 @@ export class PurchaseController {
   }
 
   @Get()
-  findOne(
-    @Query('customerName') customerName: string
-  ){
+  findOne(@Query('customerName') customerName: string) {
     return {
-        success: true,
-        data: this.PurchaseService.findOne(customerName),
-        message: 'Fetched purchases successfully',
-      };
+      success: true,
+      data: this.PurchaseService.findOne(customerName),
+      message: 'Fetched purchases successfully',
+    };
   }
 }

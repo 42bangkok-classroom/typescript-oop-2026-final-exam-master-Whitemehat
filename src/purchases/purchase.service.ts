@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import { Purchase } from './purchase.interface';
-import { NotFoundException } from '@nestjs/common';
 
 const filepath = './data/purchases.json';
 export class PurchaseService {

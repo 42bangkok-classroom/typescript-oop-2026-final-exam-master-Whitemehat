@@ -14,9 +14,7 @@ export class PurchaseController {
   }
 
   @Get(':id')
-  findOne(
-    @Param('id') id: number
-) {
-    return this.PurchaseService.findOne(+id)
+  findOne(@Param('id') id: number) {
+    return this.PurchaseService.findOne(+id);
   }
 }

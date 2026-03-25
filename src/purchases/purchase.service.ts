@@ -10,16 +10,16 @@ export class PurchaseService {
     return data;
   }
 
-  findOne(id : number){
+  findOne(id: number) {
     const rawData = fs.readFileSync(filepath, 'utf-8');
     const data = JSON.parse(rawData) as Purchase[];
     const customer = data.find((d) => d.id === id);
     if (!customer) {
-        return {
-            success: false,
-            data: null,
-            message: `Purchase with id ${id} not found`,
-          };
+      return {
+        success: false,
+        data: null,
+        message: `Purchase with id ${id} not found`,
+      };
     }
     return {
       success: true,

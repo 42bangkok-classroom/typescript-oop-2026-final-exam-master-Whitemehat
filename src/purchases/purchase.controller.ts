@@ -17,7 +17,7 @@ export class PurchaseController {
   findOne(@Param('id') id: number) {
     return {
       success: this.PurchaseService.findOne(+id) ? true : false,
-      data: this.PurchaseService.findOne(+id) || null,
+      data: this.PurchaseService.findOne(+id),
       message: this.PurchaseService.findOne(+id)
         ? 'Fetched purchases successfully'
         : `Purchase with id ${id} not found`,

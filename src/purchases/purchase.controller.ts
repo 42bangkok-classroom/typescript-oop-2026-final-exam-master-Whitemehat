@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { PurchaseService } from './purchase.service';
 
 @Controller('purchases')
@@ -13,12 +13,10 @@ export class PurchaseController {
     };
   }
 
-  @Get()
-  findOne(@Query('customerName') customerName: string) {
-    return {
-      success: true,
-      data: this.PurchaseService.findOne(customerName),
-      message: 'Fetched purchases successfully',
-    };
+  @Get(':id')
+  findOne(
+    @Param('id') id: number
+) {
+    return this.PurchaseService.findOne(+id)
   }
 }

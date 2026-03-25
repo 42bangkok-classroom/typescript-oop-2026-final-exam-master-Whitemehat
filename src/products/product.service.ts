@@ -1,5 +1,3 @@
-export class ProductService{
-    findAll(){
-        
-    }
+export class ProductService {
+  findAll() {}
 }
